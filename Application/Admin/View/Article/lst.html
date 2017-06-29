@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>后台管理</title>
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/admin/css/common.css"/>
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/admin/css/main.css"/>
+    <script type="text/javascript" src="__PUBLIC__/admin/js/libs/modernizr.min.js"></script>
+</head>
+<body>
+<include file="Common/head" />
+<div class="container clearfix">
+    <include file="Common/left" />
+    <!--/sidebar-->
+    <div class="main-wrap">
+
+        <div class="crumb-wrap">
+            <div class="crumb-list"><i class="icon-font"></i><a href="#">首页</a><span class="crumb-step">&gt;</span><span class="crumb-name">文章管理</span></div>
+        </div>
+        <div class="result-wrap">
+            <form name="myform" id="myform" action="__CONTROLLER__/sort" method="post">
+                <div class="result-title">
+                    <div class="result-list">
+                        <a href="__CONTROLLER__/add"><i class="icon-font"></i>新增文章</a>
+                    </div>
+                </div>
+                <div class="result-content">
+                    <table class="result-tab" width="100%">
+                        <tr>
+                            <th>ID</th>
+                            <th>文章标题</th>
+                            <th>文章缩略图</th>
+                            <th>文章栏目</th>
+                            <th>操作</th>
+                        </tr>
+                        <volist name="list" id="vo">
+                        <tr>
+                            <td>{$vo.id}</td>
+                            <td title="{$vo.title}"><a target="_blank" href="#" title="{$vo.title}">{$vo.title}</a>
+                            </td>
+                            <td>
+                                <if condition="$vo['pic'] neq '' ">
+                                    <img src="/{$vo.pic}" height="50px">
+                                    <else/>
+                                    暂无缩略图
+                                </if>
+                            </td>
+                            <td>{$vo.catename}</td>
+                            <td>
+                                <a class="link-update" href="__CONTROLLER__/edit/id/{$vo.id}">修改</a>
+                                <a class="link-del" onclick="return confirm('确定删除吗？');" href="__CONTROLLER__/del/id/{$vo.id}">删除</a>
+                            </td>
+                        </tr>
+                            </volist>
+                    </table>
+                    <div class="list-page">{$page}</div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!--/main-->
+</div>
+</body>
+</html>

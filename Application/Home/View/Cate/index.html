@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>栏目</title>
+    <link rel="stylesheet" href="__PUBLIC__/index/css/bootstrap.min.css">
+    <link rel="stylesheet" href="__PUBLIC__/index/css/templatemo-style.css">
+          <script src="__PUBLIC__/index/js/html5shiv.min.js"></script>
+          <script src="__PUBLIC__/index/js/respond.min.js"></script>
+</head>
+
+    <body>
+
+    <include file="Common/head"/>
+
+        <!-- <img src="__PUBLIC__/index/img/tm-home-img.jpg" width="100%" alt="Image"> -->
+        <section class="tm-section">
+        <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-xs-center">
+                        <h2 class="tm-gold-text tm-title">文章</h2>
+                        <p class="tm-subtitle">本系统由创始人周秋宫（小豪）利用ThinkPHP+Bootstrap基于PHP+MySQL环境开发的一个简单清晰大方的博客！</p>
+                    </div>
+                </div>
+            <div class="container-fluid">
+                <div class="row">
+                    <volist name="list" id="vo"><!-- 这里循环 -->
+                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3 col-xl-3" style="margin-bottom:50px;">
+                        <div class="tm-content-box">
+                            <img src="/./{$vo.pic}" class="tm-margin-b-20" width="240px" height="120px"><!-- 缩略图 -->
+                            <h4 class="tm-margin-b-20 tm-gold-text">{$vo.title}</h4><!-- 文章标题 -->
+                            <p class="tm-margin-b-20"><span>{$vo.time|date="Y-m-d",###}</span>&nbsp;&nbsp;&nbsp;&nbsp;{$vo.desc}</p><!-- 文章描述 -->
+                            <a href="__MODULE__/Article/index/id/{$vo.id}" class="tm-btn text-uppercase">点击查看</a><!-- 文章地址 -->
+                        </div>
+                    </div>
+                    </volist><!-- 这里循环结束 -->
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-xs-center">
+                            <div class="list-page">{$page}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    <include file="Common/footer"/>
+        <script src="__PUBLIC__/index/js/jquery-1.11.3.min.js"></script>
+        <script src="__PUBLIC__/index/js/tether.min.js"></script>
+        <script src="__PUBLIC__/index/js/bootstrap.min.js"></script>
+</body>
+</html>

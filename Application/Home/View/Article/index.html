@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Classic - Blog Page</title>
+    <link rel="stylesheet" href="__PUBLIC__/index/css/bootstrap.min.css">
+    <link rel="stylesheet" href="__PUBLIC__/index/css/templatemo-style.css">
+          <script src="__PUBLIC__/index/js/html5shiv.min.js"></script>
+          <script src="__PUBLIC__/index/js/respond.min.js"></script>
+</head>
+    <body">
+
+    <include file="Common/head"/>
+
+        <div class="tm-blog-img-container"></div>
+
+        <section class="tm-section">
+            <div class="container-fluid">
+                <div class="row">
+
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                        <div class="tm-blog-post">
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-xs-center">
+                                        <h2 class="tm-gold-text tm-title">{$arts.title}</h2>
+                                        <p class="tm-subtitle">{$arts.desc}</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <p><?php echo htmlspecialchars_decode($arts['content']); ?></p>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    <include file="Common/footer"/>
+
+        <script src="__PUBLIC__/index/js/jquery-1.11.3.min.js"></script>
+        <script src="__PUBLIC__/index/https://www.atlasestateagents.co.uk/javascript/tether.min.js"></script>
+        <script src="__PUBLIC__/index/js/bootstrap.min.js"></script>
+       
+</body>
+</html>
